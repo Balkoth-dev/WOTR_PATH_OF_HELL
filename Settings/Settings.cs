@@ -11,7 +11,6 @@ using ModMenu.Settings;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using WOTR_BOAT_BOAT_BOAT.Other;
 using WOTR_BOAT_BOAT_BOAT.Utilities;
 
 namespace WOTR_BOAT_BOAT_BOAT.Settings
@@ -57,27 +56,10 @@ namespace WOTR_BOAT_BOAT_BOAT.Settings
         class SettingsUI
         {
             private static readonly string RootKey = Settings.RootKey;
-            private static readonly SettingsBuilder sb = SettingsBuilder.New(RootKey, Helpers.CreateString(GetKey("title"), "BOAT BOAT BOAT"));
+            private static readonly SettingsBuilder sb = SettingsBuilder.New(RootKey, Helpers.CreateString(GetKey("title"), "PATH OF HELL"));
             private static readonly Kingmaker.Dungeon.Blueprints.BlueprintDungeonBoonReference[] dungeonBoons = BlueprintTool.Get<BlueprintDungeonRoot>("096f36d4e55b49129ddd2211b2c50513").m_Boons;
             private static readonly List<LocalizedString> boons = new List<LocalizedString>();
-            private static readonly List<string> patchBoons = new List<string>() 
-            {
-                "DungeonBoon_ArcaneArmor",
-                "DungeonBoon_BarbarianHP",
-                "DungeonBoon_Bludgeoning",
-                "DungeonBoon_BonusDmgBows",
-                "DungeonBoon_Dwarven",
-                "DungeonBoon_Acid",
-                "DungeonBoon_Cold",
-                "DungeonBoon_Electric",
-                "DungeonBoon_Fire",
-                "DungeonBoon_Sonic",
-                "DungeonBoon_Elven",
-                "DungeonBoon_Exotic",
-                "DungeonBoon_Rogues",
-                "DungeonBoon_Slashing",
-                "DungeonBoon_UnarmedStrikes"
-            };
+
             public static void Initialize()
             {
                 sb.AddImage(AssetLoader.LoadInternal("Settings", "boatboatboat.png",512,212),212);
@@ -86,47 +68,6 @@ namespace WOTR_BOAT_BOAT_BOAT.Settings
                 CreateToggle("noshametoggle");
                 CreateToggle("deadisdeadtoggle");
                 CreateToggle("cheevostoggle");
-
-                CreateSubHeader("hotkeysubheader");
-                CreateKeyBinding("saveandexitkeybinding", () => BBB_Cheats.RunCheat(BBB_Cheats.SaveAndExit));
-                CreateKeyBinding("showmapkeybinding", () => BBB_Cheats.RunCheat(() => DungeonController.ShowMapCheat()));
-                CreateKeyBinding("teleportbacktoshipkeybinding", () => BBB_Cheats.RunCheat(BBB_Cheats.TeleportBackToBoatCheat));
-                CreateKeyBinding("teleportbacktoislandkeybinding", () => BBB_Cheats.RunCheat(BBB_Cheats.TeleportBackToIslandCheat));
-                CreateKeyBinding("teleportbacktoportkeybinding", () => BBB_Cheats.RunCheat(BBB_Cheats.TeleportBackToPort));
-                CreateKeyBinding("startoverkeybinding", () => BBB_Cheats.RunCheat(BBB_Cheats.StartOver));
-                CreateKeyBinding("restall", () => BBB_Cheats.RunCheat(CheatsCombat.RestAll));
-                CreateKeyBinding("killyou", () => BBB_Cheats.RunCheat(CheatsCombat.Kill));
-                CreateKeyBinding("killall", () => BBB_Cheats.RunCheat(CheatsCombat.KillAll));
-
-                CreateSubHeader("trainingpartnerssubheader");
-                CreateDropdown("trainingpartnersdropdown", TrainingPartnerList.localizedStrings(), 6);
-                CreateKeyBinding("trainingpartners", () => BBB_Cheats.RunCheat(BBB_Cheats.SummonTrainingPartner));
-
-                CreateSubHeader("teleportcheatssubheader");
-                CreateButton("teleportbacktoship", () => BBB_Cheats.RunCheat(BBB_Cheats.TeleportBackToBoatCheat));
-                CreateButton("teleportbacktoisland",() => BBB_Cheats.RunCheat(BBB_Cheats.TeleportBackToIslandCheat));
-                CreateButton("teleportbacktoport", () => BBB_Cheats.RunCheat(BBB_Cheats.TeleportBackToPort));
-
-                CreateSubHeader("expeditioncheatssubheader");
-                CreateButton("finishcurrentisland",() => BBB_Cheats.RunCheat(BBB_Cheats.FinishCurrentIslandCheat));
-                CreateButton("movetonextisland",() => BBB_Cheats.RunCheat(BBB_Cheats.MoveToNextIslandCheat));
-                CreateButton("completeexpedition",() => BBB_Cheats.RunCheat(BBB_Cheats.CompleteExpedition));
-
-                CreateSubHeader("misccheatssubheader");
-                CreateButton("showmapbutton", () => BBB_Cheats.RunCheat(() => DungeonController.ShowMapCheat()));
-
-                foreach(var v in dungeonBoons)
-                {
-                    boons.Add(Helpers.CreateString(GetKey(v.Guid.ToString()), BlueprintTool.Get<BlueprintDungeonBoon>(v.deserializedGuid.ToString()).Name));
-                }
-
-                CreateDropdownButton("addBoon", SetBoonIndexAndApplyBoon,boons);
-                
-                CreateSubHeader("patchessubheader");
-                foreach(var boonRef in patchBoons)
-                {
-                    CreatePatchToggle(boonRef, true);
-                }
 
                 ModMenu.ModMenu.AddSettings(sb);
             }
