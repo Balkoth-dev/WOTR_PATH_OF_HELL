@@ -16,12 +16,11 @@ https://github.com/WittleWolfie/ModMenu
 ```
 * Allows you to keep your Aeon gazes when going into the Devil mythic path. You may need to respec if you are unable to use the gazes correctly.
 * Hell's Authority starts at MR8 instead of MR10.
-
 ```
 ## Change Log
 ```
 
-
+```
 ## Special Thanks
 Thanks to @Vek17#1898, @bubbles#0538, @WittleWolfie#8477, and everyone else on the [Discord](https://discord.gg/owlcat). Without their assistance this project would not have been possible.
 
