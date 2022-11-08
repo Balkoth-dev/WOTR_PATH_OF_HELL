@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WOTR_BOAT_BOAT_BOAT.Achievements
+namespace WOTR_PATH_OF_HELL.Achievements
 {
     [HarmonyPatch(typeof(AchievementEntity), nameof(AchievementEntity.IsDisabled), MethodType.Getter)]
     public static class AchievementEntity_IsDisabled_Patch

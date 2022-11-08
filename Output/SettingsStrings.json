@@ -1,14 +1,22 @@
 [
   {
-    "Key": "WOTR-BOAT-BOAT-BOAT.settingssubheader-value",
-    "enGB": "Settings"
+    "Key": "WOTR-PATH-OF-HELL.patchessubheader-value",
+    "enGB": "Patches (Restart Required)"
   },
   {
-    "Key": "WOTR-BOAT-BOAT-BOAT.cheevostoggle-description",
-    "enGB": "Cheevos"
+    "Key": "WOTR-PATH-OF-HELL.aeongazepatch-description",
+    "enGB": "Keep Aeon Gazes"
   },
   {
-    "Key": "WOTR-BOAT-BOAT-BOAT.cheevostoggle-longDescription",
-    "enGB": "RESTART REQUIRED!\nTaken from ToyBox, allows achievements to be used with a modded game. If you use ToyBox you don't need this."
+    "Key": "WOTR-PATH-OF-HELL.aeongazepatch-longDescription",
+    "enGB": "RESTART REQUIRED!\nAllows you to keep your Aeon gazes when going into the Devil mythic path. You may need to respec if you are unable to use the gazes correctly."
+  },
+  {
+    "Key": "WOTR-PATH-OF-HELL.hellsauthoritypatch-description",
+    "enGB": "Early Hell's Authority"
+  },
+  {
+    "Key": "WOTR-PATH-OF-HELL.hellsauthoritypatch-longDescription",
+    "enGB": "RESTART REQUIRED!\nHell's Authority starts at MR8 instead of MR10."
   }
 ]

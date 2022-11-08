@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WOTR_BOAT_BOAT_BOAT.Utilities
+namespace WOTR_PATH_OF_HELL.Utilities
 {
     class ObjectDeepCopier
     {

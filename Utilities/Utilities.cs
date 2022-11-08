@@ -10,11 +10,11 @@ using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json;
 using static UnityModManagerNet.UnityModManager;
-using static WOTR_BOAT_BOAT_BOAT.Settings.BlueprintsCache_Postfix;
+using static WOTR_PATH_OF_HELL.Settings.BlueprintsCache_Postfix;
 using Newtonsoft.Json.Linq;
 using BlueprintCore.Utils;
 
-namespace WOTR_BOAT_BOAT_BOAT.Utilities
+namespace WOTR_PATH_OF_HELL.Utilities
 {
     class AssetLoader
     {
@@ -140,7 +140,7 @@ namespace WOTR_BOAT_BOAT_BOAT.Utilities
         {
             try
             {
-                return LocalizationTool.GetString("WOTR-BOAT-BOAT-BOAT." + key + seperator + name);
+                return LocalizationTool.GetString("WOTR-PATH-OF-HELL." + key + seperator + name);
             }
             catch(Exception ex)
             {

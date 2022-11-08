@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using WOTR_BOAT_BOAT_BOAT;
+using WOTR_PATH_OF_HELL;
 
 #nullable enable
 namespace BlueprintCore.Utils

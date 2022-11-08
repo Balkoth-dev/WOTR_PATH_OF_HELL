@@ -2,7 +2,7 @@ using Kingmaker.Blueprints;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using WOTR_BOAT_BOAT_BOAT;
+using WOTR_PATH_OF_HELL;
 
 namespace BlueprintCore.Utils
 {

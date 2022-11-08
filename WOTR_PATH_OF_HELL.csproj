@@ -8,8 +8,8 @@
     <ProjectGuid>{126A5152-0ABE-44AE-97D4-7812F445DF88}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WOTR_BOAT_BOAT_BOAT</RootNamespace>
-    <AssemblyName>WOTR_BOAT_BOAT_BOAT</AssemblyName>
+    <RootNamespace>WOTR_PATH_OF_HELL</RootNamespace>
+    <AssemblyName>WOTR_PATH_OF_HELL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -134,9 +134,9 @@
     <Compile Include="BlueprintCore\Utils\LocalizationTool.cs" />
     <Compile Include="BlueprintCore\Utils\MatchContext.cs" />
     <Compile Include="BlueprintCore\Utils\MatchExtensions.cs" />
+    <Compile Include="BlueprintPatches\DevilProgression.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="BlueprintPatches\DLC3_ArmorPenaltyReduceBuff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\Settings.cs" />
     <Compile Include="Utilities\ObjectDeepCopier.cs" />
@@ -147,7 +147,6 @@
       <LogicalName>BlueprintCore.resources.encyclopedia.json</LogicalName>
     </EmbeddedResource>
     <None Include="Output\Info.json" />
-    <None Include="Output\PatchesStrings.json" />
     <None Include="Output\SettingsStrings.json" />
     <None Include="packages.config" />
     <None Include="README.md" />
@@ -158,8 +157,7 @@
     <Folder Include="Strings\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BoatBoatBoatMenu.png" />
-    <Content Include="Output\Assets\Settings\boatboatboat.png" />
+    <Content Include="Output\Assets\Settings\pathofhell.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="Publicise" AfterTargets="Clean">
@@ -169,7 +167,7 @@
     <Publicise InputAssemblies="@(PubliciseInputAssemblies)" OutputPath="$(SolutionDir)lib/" PubliciseCompilerGenerated="true" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>(robocopy "$(TargetDir) " "%25WrathPath%25\Mods\WOTR_BOAT_BOAT_BOAT\ " /s /e )^&amp; IF %25ERRORLEVEL%25 LEQ 1 exit 0</PostBuildEvent>
+    <PostBuildEvent>(robocopy "$(TargetDir) " "%25WrathPath%25\Mods\WOTR_PATH_OF_HELL\ " /s /e )^&amp; IF %25ERRORLEVEL%25 LEQ 1 exit 0</PostBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

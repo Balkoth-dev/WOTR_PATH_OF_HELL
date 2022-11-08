@@ -3,7 +3,7 @@ using Kingmaker.Blueprints;
 using System;
 using System.Linq;
 
-namespace WOTR_BOAT_BOAT_BOAT
+namespace WOTR_PATH_OF_HELL
 {
     static class Extensions
     {

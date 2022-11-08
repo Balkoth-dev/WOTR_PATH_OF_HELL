@@ -11,14 +11,14 @@ using ModMenu.Settings;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using WOTR_BOAT_BOAT_BOAT.Utilities;
+using WOTR_PATH_OF_HELL.Utilities;
 
-namespace WOTR_BOAT_BOAT_BOAT.Settings
+namespace WOTR_PATH_OF_HELL.Settings
 {
     public static class Settings
     {
         public static BlueprintGuid BoonGuid;
-        public static readonly string RootKey = "wotr-boat-boat-boat.settings";
+        public static readonly string RootKey = "wotr-path-of-hell.settings";
         public static List<BlueprintDungeonBoon> editedBoons = new List<BlueprintDungeonBoon>();
         public static T GetSetting<T>(string key)
         {
@@ -62,12 +62,11 @@ namespace WOTR_BOAT_BOAT_BOAT.Settings
 
             public static void Initialize()
             {
-                sb.AddImage(AssetLoader.LoadInternal("Settings", "boatboatboat.png",512,212),212);
+                sb.AddImage(AssetLoader.LoadInternal("Settings", "pathofhell.png", 512,212),212);
 
-                CreateSubHeader("settingssubheader");
-                CreateToggle("noshametoggle");
-                CreateToggle("deadisdeadtoggle");
-                CreateToggle("cheevostoggle");
+                CreateSubHeader("patchessubheader");
+                CreateToggle("aeongazepatch", true);
+                CreateToggle("hellsauthoritypatch", true);
 
                 ModMenu.ModMenu.AddSettings(sb);
             }
@@ -120,16 +119,6 @@ namespace WOTR_BOAT_BOAT_BOAT.Settings
                 sb.AddKeyBinding(KeyBinding.New(GetKey(key), gamesModeGroup, Helpers.CreateString(GetKey(key + "-desc"), Helpers.GetLocalizationElement("description", key))).SetPrimaryBinding(firstKey, withctrl)
                     .WithLongDescription(Helpers.CreateString(GetKey(key + "-longDesc"), Helpers.GetLocalizationElement("longDescription", key))),
                     action);
-            }
-            private static void SetBoonIndexAndApplyBoon(int i)
-            {
-                var boonSelected = boons[i];
-                var bf = boonSelected.Key.ToString().Replace($"{RootKey}.", "");
-                var b = new BlueprintGuid(Guid.Parse(bf));
-                Main.Log(b.ToString());
-                Settings.BoonGuid = b;
-                Main.Log(Settings.BoonGuid.ToString());
-                ApplyBoon.Apply();
             }
             private static string GetKey(string partialKey)
             {
