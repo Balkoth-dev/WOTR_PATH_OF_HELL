@@ -2,6 +2,7 @@
 
 Requires ModMenu:
 https://github.com/WittleWolfie/ModMenu
+![alt text](https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT/blob/master/BoatBoatBoatMenu.png?raw=true)
 
 ## How to Install
 
