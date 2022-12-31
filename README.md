@@ -1,5 +1,7 @@
 # PATH OF HELL
 
+## [![Download zip](https://github.com/Balkoth-dev/WOTR_PATH_OF_HELL/blob/master/downloadButtonHell.png?raw=true "Download zip")](https://github.com/Balkoth-dev/WOTR_PATH_OF_HELL/releases/latest/download/WOTR_PATH_OF_HELL.zip)
+
 Requires ModMenu:
 https://github.com/WittleWolfie/ModMenu
 ![alt text](https://github.com/Balkoth-dev/WOTR_PATH_OF_HELL/blob/1.0.0/pathofhellmenu.png)
