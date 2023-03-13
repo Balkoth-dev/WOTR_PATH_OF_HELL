@@ -127,7 +127,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Achievements\EnableAchievementsWithMods.cs" />
     <Compile Include="BlueprintCore\Utils\BlueprintTool.cs" />
     <Compile Include="BlueprintCore\Utils\EncyclopediaTool.cs" />
     <Compile Include="BlueprintCore\Utils\LocalizationPack.cs" />
@@ -150,8 +149,10 @@
     <None Include="Output\SettingsStrings.json" />
     <None Include="packages.config" />
     <None Include="README.md" />
+    <None Include="version.bat" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="lib\" />
     <Folder Include="MechanicsChanges\" />
     <Folder Include="Other\" />
     <Folder Include="Strings\" />
@@ -168,7 +169,12 @@
     <Publicise InputAssemblies="@(PubliciseInputAssemblies)" OutputPath="$(SolutionDir)lib/" PubliciseCompilerGenerated="true" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>(robocopy "$(TargetDir) " "%25WrathPath%25\Mods\WOTR_PATH_OF_HELL\ " /s /e )^&amp; IF %25ERRORLEVEL%25 LEQ 1 exit 0</PostBuildEvent>
+    <PostBuildEvent>if defined DEBUG (
+    (robocopy "$(TargetDir) " "%25WrathPath%25\Mods\$(AssemblyName)\ " /s /e )^&amp; IF %25ERRORLEVEL%25 LEQ 1 exit 0
+) else (
+    $(ProjectDir)version.bat &amp;&amp; (robocopy "$(TargetDir) " "%25WrathPath%25\Mods\$(AssemblyName)\ " /s /e )^&amp; IF %25ERRORLEVEL%25 LEQ 1 exit 0
+)
+</PostBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
